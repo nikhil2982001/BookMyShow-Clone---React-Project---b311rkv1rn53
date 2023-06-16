@@ -1,7 +1,8 @@
+import { useContext } from "react";
+import { appContext } from "./appContext";
 const useAppContext = () => {
-  return (
-    <div>useAppContext</div>
-  )
-}
+    const context = useContext(appContext);
+    return context;
+};
 
-export default useAppContext
+export default useAppContext;
