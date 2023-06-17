@@ -5,6 +5,11 @@ import startImage from "../../assets/star.png";
 import heartWhite from "../../assets/heart_white.png";
 import heart from "../../assets/heart.png";
 import useAppContext from "../../useAppContext";
+import {
+    addToUsesFavorites,
+    ifFavorite,
+    removeFavoriteFromUser,
+} from "../../databse";
 const MovieDetail = () => {
     const navigate = useNavigate();
     let { movieId } = useParams();
@@ -14,10 +19,23 @@ const MovieDetail = () => {
     async function makeFavorite() {
         if (!user) return;
         console.log("make favorite");
+        let result = await addToUsesFavorites(movie, user);
+        if (result) {
+            setIsFavorite(true);
+        } else {
+            setIsFavorite(false);
+        }
     }
     async function removeFavorite() {
         if (!user) return;
         console.log("remove favorite");
+        let result = await removeFavoriteFromUser(movie, user);
+        if (result) {
+            setIsFavorite(false);
+        }
+        // else {
+        //     setIsFavorite(true);
+        // }
     }
     async function fetchMovie() {
         let { data, error } = await getMovieById(movieId);
@@ -31,6 +49,13 @@ const MovieDetail = () => {
     useEffect(() => {
         fetchMovie();
     }, []);
+    useEffect(() => {
+        if (user && movie) {
+            ifFavorite(movie, user, (isFav) => {
+                setIsFavorite(isFav);
+            });
+        }
+    }, [user, movie]);
     return (
         <div className="movie-detail">
             {movie && (

@@ -100,7 +100,11 @@ export default function Navbar() {
                         </button>
                     )}
                     <button
-                        onClick={() => navigate("/favorites")}
+                        onClick={() => {
+                            if (user) {
+                                navigate("/favorites");
+                            }
+                        }}
                         className="btn btn_whishList"
                     >
                         <img src={heartIcon} alt="heart" />

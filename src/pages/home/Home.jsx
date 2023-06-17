@@ -1,4 +1,4 @@
-import MovieCard from "./MovieCard";
+import MovieCard from "../components/MovieCard";
 import useAppContext from "../../useAppContext";
 const Home = () => {
     const { movies } = useAppContext();
