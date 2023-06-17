@@ -1,5 +1,5 @@
 import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
-import { app } from "./Firebase";
+import { app } from "./firebase";
 const db = getFirestore(app);
 
 export async function addToUsesFavorites(movie, user) {
