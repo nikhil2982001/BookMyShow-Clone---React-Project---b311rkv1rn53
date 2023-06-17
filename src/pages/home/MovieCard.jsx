@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 const MovieCard = ({ movie }) => {
     return (
-        <Link className="movie-card">
+        <Link to={`/movieDetail/${movie.id}`} className="movie-card">
             <img
                 className="movie-card-img"
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
