@@ -66,6 +66,24 @@ body {
     margin-left: auto;
     cursor: pointer;
 }
+.btn_log_out {
+    padding: 6px 10px;
+    font-size: 20px;
+    color: white;
+    background-color: hsl(234, 6%, 35%);
+    border-radius: 6px;
+    /* margin-left: auto; */
+    cursor: pointer;
+}
+.user_text {
+    padding: 6px 10px;
+    font-size: 20px;
+    color: white;
+    background-color: hsl(234, 6%, 35%);
+    border-radius: 6px;
+    margin-left: auto;
+    cursor: pointer;
+}
 .btn_whishList img {
     width: 20px;
     height: auto;
@@ -310,4 +328,97 @@ body {
     margin: 20px auto;
     width: 60%;
     height: auto;
+}
+
+.checkout-page {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background-color: rgb(255, 245, 245);
+}
+.left-column {
+    flex: 1 1 auto;
+    border-radius: 8px;
+    background-color: white;
+}
+
+.right-column {
+    flex: 0 0 400px;
+    border-radius: 8px;
+    background-color: white;
+}
+.movie-checkout-image-container {
+    margin: 10px auto;
+    height: 300px;
+    width: 220px;
+    border-radius: 8px;
+}
+.movie-checkout-image-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+}
+.movie-checkout-title {
+    text-align: center;
+}
+.movie-checkout-overview {
+    width: 80%;
+    margin: 20px auto;
+    text-align: justify;
+    line-height: 25px;
+}
+.movie-checkout-tagline {
+    width: 80%;
+    margin: 30px auto;
+    text-align: right;
+}
+.booking-summary-title {
+    margin: 20px;
+}
+.booking-summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+}
+.booking-summary-row.final {
+    background-color: rgba(255, 249, 177, 0.847);
+}
+.booking-summary-row ~ .booking-summary-row {
+    border-top: 2px silver dotted;
+}
+.checkout-form input {
+    display: block;
+    padding: 10px 20px;
+    width: 90%;
+    border-radius: 8px;
+    margin: 10px auto;
+}
+.checkout-form button {
+    width: 90%;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: rgb(1, 200, 255);
+    color: white;
+    display: block;
+    margin: 10px auto;
+    cursor: pointer;
+}
+.heart {
+    filter: invert(1);
+    position: relative;
+    z-index: 10;
+    /* background-color: red; */
+}
+.book-and-favorite {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.book-and-favorite img {
+    width: 25px;
+    height: auto;
+    cursor: pointer;
 }

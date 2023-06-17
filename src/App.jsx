@@ -8,6 +8,7 @@ import Booking from "./pages/booking/Booking";
 import Checkout from "./pages/checkout/Checkout";
 import Home from "./pages/home/Home";
 import MovieDetail from "./pages/movieDetail/MovieDetail";
+import Favorites from "./pages/favorites/Favorites";
 function App() {
     const router = createBrowserRouter([
         {
@@ -29,6 +30,10 @@ function App() {
                 {
                     path: "/checkout/:movieId",
                     element: <Checkout />,
+                },
+                {
+                    path: "/favorites",
+                    element: <Favorites />,
                 },
             ],
         },

@@ -2,10 +2,15 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import theaterImage from "../../assets/theater.png";
 const Booking = () => {
+    const navigate = useNavigate();
     const [seats, setSeats] = useState(null);
     const [selectedSeats, setSelectedSeats] = useState([]);
-    const navigate = useNavigate();
     let { movieId } = useParams();
+    function handleCheckoutClick() {
+        navigate(
+            `/checkout/${movieId}?seatsSelected=${selectedSeats.join(",")}`
+        );
+    }
     function handleSeatClick(seat) {
         if (seat.status === "booked") return;
         if (seat.status === "selected") {
@@ -18,9 +23,7 @@ const Booking = () => {
             });
             newSeats = newSeats.sort((a, b) => a.seatNo - b.seatNo);
             setSelectedSeats((prevSelected) => {
-                return prevSelected.filter(
-                    (item) => item.seatNo !== seat.seatNo
-                );
+                return prevSelected.filter((item) => item !== seat.seatNo);
             });
             setSeats(newSeats);
         } else {
@@ -76,6 +79,14 @@ const Booking = () => {
                 </div>
             </div>
             <img className="theater-image" src={theaterImage} alt="theater" />
+            {selectedSeats.length > 0 && (
+                <button
+                    className="proceed_checkout"
+                    onClick={handleCheckoutClick}
+                >
+                    Proceed to checkout
+                </button>
+            )}
         </>
     );
 };
