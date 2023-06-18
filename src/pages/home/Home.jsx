@@ -1,7 +1,8 @@
 import MovieCard from "../components/MovieCard";
 import useAppContext from "../../useAppContext";
+import MovieDetail from "../movieDetail/MovieDetail";
 const Home = () => {
-    const { movies } = useAppContext();
+    const{movies}= useAppContext();
     return (
         <div className="home">
             {movies.map((movie) => {

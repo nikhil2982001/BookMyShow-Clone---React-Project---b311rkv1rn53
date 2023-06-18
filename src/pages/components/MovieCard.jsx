@@ -10,6 +10,7 @@ const MovieCard = ({ movie }) => {
             />
             <div className="movie_details">
                 <p>{movie.original_title}</p>
+                <p>{movie.vote_average}</p>
             </div>
         </Link>
     );
