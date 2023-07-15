@@ -21,6 +21,8 @@ body {
     width: 200px;
     height: auto;
     filter: invert(1);
+    cursor: pointer;
+    flex: 0 0 200px;
 }
 .primary-nav form {
     display: flex;
@@ -29,6 +31,8 @@ body {
     border-radius: 6px;
     gap: 5px;
     padding: 0px 10px;
+    flex: 1 1 400px;
+    max-width: 500px;
 }
 .primary-nav form img {
     width: 15px;
@@ -38,7 +42,7 @@ body {
     border: none;
     outline: none;
     height: 35px;
-    width: 500px;
+    width: 100%;
 }
 .primary-nav form input:focus,
 .primary-nav form input:hover {
@@ -56,6 +60,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 0 0 max-content;
 }
 .btn_sign_in {
     padding: 6px 10px;
@@ -65,6 +70,7 @@ body {
     border-radius: 6px;
     margin-left: auto;
     cursor: pointer;
+    flex: 0 0 max-content;
 }
 .btn_log_out {
     padding: 6px 10px;
@@ -74,6 +80,7 @@ body {
     border-radius: 6px;
     /* margin-left: auto; */
     cursor: pointer;
+    flex: 0 0 max-content;
 }
 .user_text {
     padding: 6px 10px;
@@ -83,6 +90,7 @@ body {
     border-radius: 6px;
     margin-left: auto;
     cursor: pointer;
+    flex: 0 0 max-content;
 }
 .btn_whishList img {
     width: 20px;
@@ -432,6 +440,33 @@ body {
     padding: 20px 60px;
     background-color: #c9e6ff;
 }
-.proceed_checkout{
+.proceed_checkout {
     color: #5357a3;
+}
+.nav-primary-nav-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+/* @media screen and (max-width: 915px) {} */
+@media screen and (max-width: 915px) {
+    .primary-nav {
+        flex-direction: column;
+        height: 205px;
+    }
+    #logo {
+        width: 250px;
+        flex: 1;
+    }
+    .primary-nav form {
+        max-width: none;
+        width: 100%;
+        flex: 1;
+    }
+    /* .user_text{
+        order: 2;
+    } */
+    .nav-primary-nav-buttons {
+        margin: 0px auto;
+    }
 }

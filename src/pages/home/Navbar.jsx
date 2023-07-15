@@ -65,7 +65,10 @@ export default function Navbar() {
             <nav>
                 <div className="primary-nav">
                     <img
-                        onClick={() => navigate("/")}
+                        onClick={() => {
+                            navigate("/");
+                            handleGenre("All");
+                        }}
                         id="logo"
                         src={logo}
                         alt="logo"
@@ -79,36 +82,38 @@ export default function Navbar() {
                             placeholder="search for movies"
                         />
                     </form>
-                    {user ? (
-                        <>
-                            <span className="btn user_text">
-                                Hello, {user.displayName}
-                            </span>
+                    <div className="nav-primary-nav-buttons">
+                        {user ? (
+                            <>
+                                <span className="btn user_text">
+                                    Hello, {user.displayName}
+                                </span>
+                                <button
+                                    onClick={() => handleLogout()}
+                                    className="btn btn_log_out"
+                                >
+                                    log out
+                                </button>
+                            </>
+                        ) : (
                             <button
-                                onClick={() => handleLogout()}
-                                className="btn btn_log_out"
+                                onClick={() => handleLogin()}
+                                className="btn btn_sign_in"
                             >
-                                log out
+                                Sign in
                             </button>
-                        </>
-                    ) : (
+                        )}
                         <button
-                            onClick={() => handleLogin()}
-                            className="btn btn_sign_in"
+                            onClick={() => {
+                                if (user) {
+                                    navigate("/favorites");
+                                }
+                            }}
+                            className="btn btn_whishList"
                         >
-                            Sign in
+                            <img src={heartIcon} alt="heart" />
                         </button>
-                    )}
-                    <button
-                        onClick={() => {
-                            if (user) {
-                                navigate("/favorites");
-                            }
-                        }}
-                        className="btn btn_whishList"
-                    >
-                        <img src={heartIcon} alt="heart" />
-                    </button>
+                    </div>
                 </div>
                 <div className="secondary-nav">
                     <div
