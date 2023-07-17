@@ -448,7 +448,11 @@ body {
     gap: 10px;
     margin-left: auto;
 }
-/* @media screen and (max-width: 930px) {} */
+@media screen and (max-width: 690px) {
+    .checkout-page {
+        flex-direction: column;
+    }
+}
 @media screen and (max-width: 915px) {
     .primary-nav {
         flex-direction: column;
@@ -484,5 +488,17 @@ body {
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
+    }
+    .movie-booking {
+        gap: 0px;
+        width: 350px;
+    }
+    .movie-booking-seats {
+        gap: 2px;
+    }
+    .seat {
+    }
+    .movie-booking-letters {
+        padding-left: 4px;
     }
 }
