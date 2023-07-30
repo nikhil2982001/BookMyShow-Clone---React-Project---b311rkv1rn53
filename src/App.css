@@ -441,7 +441,9 @@ body {
     background-color: #c9e6ff;
 }
 .proceed_checkout {
-    color: #5357a3;
+    color: black;
+    width: 100vw;
+    background-color: blue;
 }
 .nav-primary-nav-buttons {
     display: flex;
