@@ -444,6 +444,7 @@ body {
     color: black;
     width: 100vw;
     background-color: blue;
+    height: 20px;
 }
 .nav-primary-nav-buttons {
     display: flex;
