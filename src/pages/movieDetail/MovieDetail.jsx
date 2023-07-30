@@ -91,6 +91,7 @@ const MovieDetail = () => {
                                 {movie["genres"]
                                     .map((genre) => genre.name)
                                     .join(", ")}{" "}
+                                <br>
                                 {movie.runtime} min.
                             </p>
                             <div className="book-and-favorite">
