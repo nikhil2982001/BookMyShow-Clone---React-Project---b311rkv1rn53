@@ -443,7 +443,8 @@ body {
 .proceed_checkout {
     color: black;
     width: 100vw;
-    height: fit-content;
+    border-radius: 999px;
+    height: 50px;
     cursor: pointer;
     background-color: blue;
     
