@@ -441,9 +441,10 @@ body {
     background-color: #c9e6ff;
 }
 .proceed_checkout {
-    display: block-inline;
+    display: block;
     color: black;
     width: 100vw;
+    height: 20px;
     background-color: blue;
     
     pointer: cursor;
