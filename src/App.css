@@ -441,10 +441,12 @@ body {
     background-color: #c9e6ff;
 }
 .proceed_checkout {
+    display: block-inline;
     color: black;
     width: 100vw;
     background-color: blue;
     height: 400px;
+    pointer: cursor;
 }
 .nav-primary-nav-buttons {
     display: flex;
